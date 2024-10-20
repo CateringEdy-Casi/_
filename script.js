@@ -1,0 +1,1 @@
+console.log("Pagina de meniu Catering Edy & Casi este încărcată!");
