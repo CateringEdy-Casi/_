@@ -1,10 +1,13 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('blurred-corridor-with-chairs-tables.jpg');
+    background-image: url('cafe-blurred.jpg');
     background-size: cover;
     background-position: center;
     color: #333;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container {
@@ -249,4 +252,15 @@ li {
 .tel {
     text-align: center;
     margin: -7px;
+}
+
+.data {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+
+.titlumare {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xxx-large;
 }
