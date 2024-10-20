@@ -79,7 +79,7 @@ li {
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     .menu {
         width: 90%; 
     }
@@ -155,7 +155,7 @@ li {
     color: #555;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     .menu {
         width: 90%; 
     }
@@ -222,7 +222,7 @@ li {
     color: #555;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     .menu {
         width: 90%; 
     }
