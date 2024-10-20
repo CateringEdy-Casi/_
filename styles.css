@@ -15,7 +15,7 @@ body {
 }
 
 .menu {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -90,10 +90,163 @@ li {
     }
 }
 
+
 h1 {
     margin-bottom: 20px;
     font-size: 2.5em;
     font-weight: bold;
     text-decoration: underline;
     color: #333;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('blurred-corridor-with-chairs-tables.jpg');
+    background-size: cover; 
+    background-position: center;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Reducerea înălțimii totale */
+    padding: 20px; 
+}
+
+.menu {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundal alb semi-transparent */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px; 
+    width: 100%; 
+    text-align: center;
+    overflow-y: auto; 
+    max-height: 80vh; /* Ajustare, dacă este necesar */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #333;
+}
+
+h2 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+    color: #000000;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        width: 90%; 
+    }
+
+    h1 {
+        font-size: 1.5em; 
+    }
+
+    h2 {
+        font-size: 1.2em; 
+    }
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('blurred-corridor-with-chairs-tables.jpg');
+    background-size: cover; 
+    background-position: center;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Reducerea înălțimii totale */
+    padding: 20px; 
+}
+
+.menu {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundal alb semi-transparent */
+    padding: 20px;
+    border-radius: 20px; /* Crește valoarea pentru colțuri mai rotunde */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px; 
+    width: 100%; 
+    text-align: center;
+    overflow-y: auto; 
+    max-height: 80vh; 
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #333;
+}
+
+h2 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+    color: #000000;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        width: 90%; 
+    }
+
+    h1 {
+        font-size: 1.5em; 
+    }
+
+    h2 {
+        font-size: 1.2em; 
+    }
+}
+
+.menu {
+    background-color: rgba(255, 255, 255, 0.6); 
+    padding: 20px;
+    border-radius: 35px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px; 
+    width: 100%; 
+    text-align: center;
+    overflow-y: auto; 
+    max-height: 70vh; 
+    height: 90%;
+}
+
+.tel {
+    text-align: center;
+    margin: -7px;
 }
