@@ -256,7 +256,7 @@ li {
 
 .data {
     text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: x-large;
 }
 
@@ -267,4 +267,10 @@ li {
 
 .semnatura {
     text-align: center;
+}
+
+.pret {
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
