@@ -1,42 +1,73 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url('wallpapersden.com_topography-abstract-black-texture_2880x1800.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* face fundalul fix */
+    background-attachment: fixed;
     color: white;
 }
+
+/* Bara de sus cu efect premium */
 .top-bar {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 10px;
+    background: linear-gradient(to right, rgba(255,255,255,0.05), rgba(255,255,255,0.15));
+    padding: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 10;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.5);
 }
 
+/* Butoane premium */
 .button, .day-button {
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 12px 24px;
+    font-size: 1.05em;
     font-weight: bold;
     color: white;
-    background-color: rgba(0, 0, 0, 0.6);
-    border: 2px solid white;
-    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
     cursor: pointer;
-    margin: 5px;
-    transition: all 0.3s;
+    margin: 6px;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .button:hover, .day-button:hover {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.9);
     color: black;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
 }
 
+/* Efect click buton */
+.button:active, .day-button:active {
+    transform: scale(0.92);
+}
+
+/* Efect val la click */
+.button::after, .day-button::after {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+.button:active::after, .day-button:active::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Container central */
 .container {
     display: flex;
     justify-content: center;
@@ -44,233 +75,98 @@ body {
     padding: 20px;
 }
 
-/* Animatie fade-in la incarcare pagina index */
+/* Fade-in premium */
 .fade-in-page {
-    animation: fadeInPage 1s ease forwards;
+    animation: fadeInPage 1.2s ease forwards;
     opacity: 0;
+    transform: translateY(20px);
 }
 
 @keyframes fadeInPage {
-    to { opacity: 1; }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animatii swipe pentru meniuri */
+/* Swipe pentru meniuri */
 .swipe-out-left {
-    animation: swipeOutLeft 0.5s forwards;
+    animation: swipeOutLeft 0.5s ease forwards;
 }
-
 .swipe-in-right {
-    animation: swipeInRight 0.5s forwards;
+    animation: swipeInRight 0.5s ease forwards;
 }
 
 @keyframes swipeOutLeft {
     from { opacity: 1; transform: translateX(0); }
-    to { opacity: 0; transform: translateX(-100%); }
+    to { opacity: 0; transform: translateX(-50px); }
 }
 
 @keyframes swipeInRight {
-    from { opacity: 0; transform: translateX(100%); }
+    from { opacity: 0; transform: translateX(50px); }
     to { opacity: 1; transform: translateX(0); }
 }
 
+/* Card meniuri/contact premium */
 .menu, .contact {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 35px;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-    max-width: 500px;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    max-width: 550px;
     width: 100%;
     text-align: center;
     color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu:hover, .contact:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 50px rgba(255, 255, 255, 0.2);
 }
 
+/* Titlu */
 .titlumare {
-    font-size: 2em;
+    font-size: 2.3em;
     font-weight: bold;
     text-decoration: underline;
+    text-underline-offset: 8px;
 }
 
+/* Feluri */
 .fel {
     font-weight: bold;
     color: #ffcc00;
 }
 
+/* Preț */
 .pret {
-    font-family: fantasy;
+    font-family: 'Trebuchet MS', sans-serif;
     font-size: 2em;
     margin-top: 20px;
-    color: #ffffff;
+    color: #ffcc00;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+/* Footer */
 .semnatura {
     text-align: center;
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: rgba(0,0,0,0.8);
     font-weight: bold;
+    padding: 8px 0;
+    letter-spacing: 1px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
 }
 
+/* Liste meniuri */
 .menu ul {
     display: inline-block;
-    text-align: center;
+    text-align: left;
     margin: 0 auto;
-    padding-left: 0px;
+    padding-left: 0;
 }
 
-.button:active {
-    transform: scale(0.9);
-    background-color: #ffcc00;
-    color: black;
-    transition: transform 0.1s ease, background-color 0.2s ease;
-}
-
+/* Efect buton selectat */
 .btn-clicked {
     box-shadow: 0 0 15px #ffcc00;
     transform: scale(1.05);
-    transition: all 0.3s ease;
 }
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('wallpapersden.com_topography-abstract-black-texture_2880x1800.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
-.top-bar {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    backdrop-filter: blur(5px);
-}
-
-.button, .day-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    font-weight: bold;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.6);
-    border: 2px solid white;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-    transition: all 0.3s;
-}
-
-.button:hover, .day-button:hover {
-    background-color: white;
-    color: black;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-/* Animatie fade-in la incarcare pagina index */
-.fade-in-page {
-    animation: fadeInPage 1s ease forwards;
-    opacity: 0;
-}
-
-@keyframes fadeInPage {
-    to { opacity: 1; }
-}
-
-/* Animatii swipe pentru meniuri */
-.swipe-out-left {
-    animation: swipeOutLeft 0.5s forwards;
-}
-
-.swipe-in-right {
-    animation: swipeInRight 0.5s forwards;
-}
-
-@keyframes swipeOutLeft {
-    from { opacity: 1; transform: translateX(0); }
-    to { opacity: 0; transform: translateX(-100%); }
-}
-
-@keyframes swipeInRight {
-    from { opacity: 0; transform: translateX(100%); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-.menu, .contact {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 35px;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-    max-width: 500px;
-    width: 100%;
-    text-align: center;
-    color: white;
-}
-
-.titlumare {
-    font-size: 2em;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.fel {
-    font-weight: bold;
-    color: #ffcc00;
-}
-
-.pret {
-    font-family: fantasy;
-    font-size: 2em;
-    margin-top: 20px;
-    color: #ffffff;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.semnatura {
-    text-align: center;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    font-weight: bold;
-}
-
-.menu ul {
-    display: inline-block;
-    text-align: center;
-    margin: 0 auto;
-    padding-left: 0px;
-}
-
-.button:active {
-    transform: scale(0.9);
-    background-color: #ffcc00;
-    color: black;
-    transition: transform 0.1s ease, background-color 0.2s ease;
-}
-
-.btn-clicked {
-    box-shadow: 0 0 15px #ffcc00;
-    transform: scale(1.05);
-    transition: all 0.3s ease;
-}
-
