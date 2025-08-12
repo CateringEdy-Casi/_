@@ -44,6 +44,35 @@ body {
     padding: 20px;
 }
 
+/* Animatie fade-in la incarcare pagina index */
+.fade-in-page {
+    animation: fadeInPage 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInPage {
+    to { opacity: 1; }
+}
+
+/* Animatii swipe pentru meniuri */
+.swipe-out-left {
+    animation: swipeOutLeft 0.5s forwards;
+}
+
+.swipe-in-right {
+    animation: swipeInRight 0.5s forwards;
+}
+
+@keyframes swipeOutLeft {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(-100%); }
+}
+
+@keyframes swipeInRight {
+    from { opacity: 0; transform: translateX(100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
 .menu, .contact {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 20px;
@@ -80,17 +109,30 @@ html {
 .semnatura {
     text-align: center;
     width: 100%;
-    
-    position: fixed;   /* rămâne jos pe ecran */
+    position: fixed;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* ca să se vadă frumos peste fundal */
+    background-color: rgba(0, 0, 0, 0.7);
     font-weight: bold;
 }
 
 .menu ul {
-    display: inline-block; /* face lista să se comporte ca un bloc centrat */
-    text-align: center; /* păstrează textul aliniat la stânga în interiorul listei */
-    margin: 0 auto; /* centrează întreaga listă */
-    padding-left: 0px; /* păstrează distanța pentru buline */
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0px;
 }
+
+.button:active {
+    transform: scale(0.9);
+    background-color: #ffcc00;
+    color: black;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.btn-clicked {
+    box-shadow: 0 0 15px #ffcc00;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
