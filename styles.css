@@ -4,6 +4,144 @@ body {
     background-image: url('wallpapersden.com_topography-abstract-black-texture_2880x1800.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* face fundalul fix */
+    color: white;
+}
+.top-bar {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+
+.button, .day-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.3s;
+}
+
+.button:hover, .day-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Animatie fade-in la incarcare pagina index */
+.fade-in-page {
+    animation: fadeInPage 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInPage {
+    to { opacity: 1; }
+}
+
+/* Animatii swipe pentru meniuri */
+.swipe-out-left {
+    animation: swipeOutLeft 0.5s forwards;
+}
+
+.swipe-in-right {
+    animation: swipeInRight 0.5s forwards;
+}
+
+@keyframes swipeOutLeft {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(-100%); }
+}
+
+@keyframes swipeInRight {
+    from { opacity: 0; transform: translateX(100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.menu, .contact {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 35px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.titlumare {
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.fel {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.pret {
+    font-family: fantasy;
+    font-size: 2em;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.semnatura {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+
+.menu ul {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0px;
+}
+
+.button:active {
+    transform: scale(0.9);
+    background-color: #ffcc00;
+    color: black;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.btn-clicked {
+    box-shadow: 0 0 15px #ffcc00;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('wallpapersden.com_topography-abstract-black-texture_2880x1800.jpg');
+    background-size: cover;
+    background-position: center;
     color: white;
 }
 
