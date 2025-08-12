@@ -1,9 +1,16 @@
-function showMenu() {
-    alert("Meniul este afișat mai jos.");
-    // Aici poți adăuga funcționalitatea pentru a derula direct la meniu sau a deschide o pagină separată
-}
+function showDay(dayId) {
+    // Ascunde toate meniurile
+    document.querySelectorAll('.day-menu').forEach(menu => {
+        menu.style.display = 'none';
+    });
 
-function showContact() {
-    alert("Pentru detalii de contact, apelați 0745 014 493.");
-    // Poți implementa alte funcționalități, precum deschiderea aplicației de apeluri sau a unui formular de contact
+    // Ascunde prețul
+    document.querySelector('.pret').style.display = 'none';
+
+    // Afișează meniul selectat
+    const selectedMenu = document.getElementById(dayId);
+    if (selectedMenu) {
+        selectedMenu.style.display = 'block';
+        document.querySelector('.pret').style.display = 'block';
+    }
 }
