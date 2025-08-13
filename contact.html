@@ -7,22 +7,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Bara de sus cu butoane -->
+    <!-- Bara de navigație -->
     <div class="top-bar">
-        <button class="button" onclick="window.location.href='menu.html'"><span>Acasa</span></button>
-        <button class="button" onclick="window.location.href='menu.html'"><span>Meniu</span></button>
+        <button class="button" onclick="navigateTo('index.html')">Acasă</button>
+        <button class="button" onclick="navigateTo('menu.html')">Meniu</button>
     </div>
-    
-    <!-- Secțiunea principală a paginii -->
+
+    <!-- Conținut principal -->
     <div class="container fade-in">
         <div class="contact">
             <h1>Contact</h1>
             <p class="telefon">Telefon: <a href="tel:+40745014493">0745 014 493</a></p>
-            <p class="adresa">Adresa: Strada Principala nr 10</p>
+            <p class="adresa">Adresa: Strada Principală nr. 10</p>
         </div>
     </div>
+
+    <!-- Footer -->
     <footer class="semnatura">
         <p>&copy; 2025 LucaStudio's</p>
     </footer>
+
+    <!-- Script navigare -->
+    <script src="script.js"></script>
 </body>
 </html>
