@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Bara de sus cu butoane -->
+    <!-- Bara de navigație -->
     <div class="top-bar">
-        <button class="button" onclick="window.location.href='index.html'">Acasă</button>
-        <button class="button" onclick="window.location.href='contact.html'">Contact</button>
+        <button class="button" onclick="navigateTo('index.html')">Acasă</button>
+        <button class="button" onclick="navigateTo('contact.html')">Contact</button>
     </div>
-    
-    <!-- Butoane zile -->
+
+    <!-- Conținut principal -->
     <div class="container fade-in">
         <div class="menu">
             <h1 class="titlumare">Meniul nostru</h1>
@@ -26,84 +26,86 @@
                 <button class="day-button" onclick="showDay('sambata')">Sâmbătă</button>
             </div>
 
-            <!-- Meniuri zile -->
-            <div id="luni" class="day-menu" style="display:none;">
+            <!-- Meniuri zile (ascunse implicit) -->
+            <div id="luni" class="day-menu hidden">
                 <h2>Luni</h2>
                 <ul>
                     <li class="fel">Felul 1:</li>
-                    <li>Supa de mazare cu galuste</li>
-                    <li>Supa crema de linte</li>
+                    <li>Supa de mazăre cu găluște</li>
+                    <li>Supă cremă de linte</li>
                     <li class="fel">Felul 2:</li>
-                    <li>Rulada cu spanac</li>
-                    <li>Dovleac cu rulada</li>
+                    <li>Ruladă cu spanac</li>
+                    <li>Dovleac cu ruladă</li>
                 </ul>
             </div>
 
-            <div id="marti" class="day-menu" style="display:none;">
+            <div id="marti" class="day-menu hidden">
                 <h2>Marți</h2>
                 <ul>
                     <li class="fel">Felul 1:</li>
-                    <li>Supa de pui</li>
-                    <li>Supa crema de legume</li>
+                    <li>Supă de pui</li>
+                    <li>Supă cremă de legume</li>
                     <li class="fel">Felul 2:</li>
-                    <li>Cotlet la cuptor si orez</li>
-                    <li>Tocanita cu orez</li>
+                    <li>Cotlet la cuptor și orez</li>
+                    <li>Tocăniță cu orez</li>
                 </ul>
             </div>
 
-            <div id="miercuri" class="day-menu" style="display:none;">
+            <div id="miercuri" class="day-menu hidden">
                 <h2>Miercuri</h2>
                 <ul>
                     <li class="fel">Felul 1:</li>
-                    <li>Ciorba a la grec</li>
-                    <li>Supa de rosii</li>
+                    <li>Ciorbă a la grec</li>
+                    <li>Supă de roșii</li>
                     <li class="fel">Felul 2:</li>
-                    <li>Pulpe pane cu pireu</li>
-                    <li>Salata de vinete cu rosii si branza</li>
+                    <li>Pulpe pane cu piure</li>
+                    <li>Salată de vinete cu roșii și brânză</li>
                 </ul>
             </div>
 
-            <div id="joi" class="day-menu" style="display:none;">
+            <div id="joi" class="day-menu hidden">
                 <h2>Joi</h2>
                 <ul>
                     <li class="fel">Felul 1:</li>
-                    <li>Ciorba de burta</li>
-                    <li>Ciorba de legume</li>
+                    <li>Ciorbă de burtă</li>
+                    <li>Ciorbă de legume</li>
                     <li class="fel">Felul 2:</li>
-                    <li>Gulas la ceaun</li>
-                    <li>Gomboti</li>
+                    <li>Gulaș la ceaun</li>
+                    <li>Gomboți</li>
                 </ul>
             </div>
 
-            <div id="vineri" class="day-menu" style="display:none;">
+            <div id="vineri" class="day-menu hidden">
                 <h2>Vineri</h2>
                 <ul>
                     <li class="fel">Felul 1:</li>
-                    <li>Ciorba de porc</li>
-                    <li>Ciorba de salata</li>
+                    <li>Ciorbă de porc</li>
+                    <li>Ciorbă de salată</li>
                     <li class="fel">Felul 2:</li>
                     <li>Iahnie de fasole cu ciolan</li>
-                    <li>Ficat de porc cu mujdei si cartofi</li>
+                    <li>Ficat de porc cu mujdei și cartofi</li>
                 </ul>
             </div>
 
-            <div id="sambata" class="day-menu" style="display:none;">
+            <div id="sambata" class="day-menu hidden">
                 <h2>Sâmbătă</h2>
                 <ul>
                     <li class="fel">Felul 1:</li>
-                    <li>Ciorba de perisioare</li>
+                    <li>Ciorbă de perișoare</li>
                     <li class="fel">Felul 2:</li>
-                    <li>Friptura cu cartofi natur</li>
+                    <li>Friptură cu cartofi natur</li>
                 </ul>
             </div>
 
-            <h1 class="pret" style="display:none;">Preț: 30 lei</h1>
+            <h1 class="pret hidden">Preț: 30 lei</h1>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="semnatura">
         <p>&copy; 2025 LucaStudio's</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
