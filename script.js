@@ -1,67 +1,36 @@
-window.onload = () => {
-    const container = document.querySelector('.container');
-    if(container) {
-        container.classList.add('fade-in-page');
-    }
-};
+function navigateTo(url) {
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+        window.location.href = url;
+    }, 400);
+}
 
 function showDay(dayId) {
     const menus = document.querySelectorAll('.day-menu');
     const pret = document.querySelector('.pret');
+    const activeMenu = document.querySelector('.day-menu:not(.hidden)');
 
-    const currentlyVisible = [...menus].find(menu => menu.style.display === 'block');
-
-    if (currentlyVisible) {
-        // Swipe out meniul curent
-        currentlyVisible.classList.add('swipe-out-left');
-        pret.classList.add('swipe-out-left');
+    // Dacă există un meniu activ, îl animăm spre stânga
+    if (activeMenu && activeMenu.id !== dayId) {
+        activeMenu.classList.remove("slide-in");
+        activeMenu.classList.add("slide-out-left");
 
         setTimeout(() => {
-            currentlyVisible.style.display = 'none';
-            currentlyVisible.classList.remove('swipe-out-left');
+            activeMenu.classList.add("hidden");
+            activeMenu.classList.remove("slide-out-left");
+        }, 400);
+    }
 
-            pret.style.display = 'none';
-            pret.classList.remove('swipe-out-left');
+    pret.classList.add("hidden");
 
-            // Swipe in meniul nou
-            const newMenu = document.getElementById(dayId);
-            if (newMenu) {
-                newMenu.style.display = 'block';
-                newMenu.classList.add('swipe-in-right');
-
-                pret.style.display = 'block';
-                pret.classList.add('swipe-in-right');
-
-                setTimeout(() => {
-                    newMenu.classList.remove('swipe-in-right');
-                    pret.classList.remove('swipe-in-right');
-                }, 500);
-            }
-        }, 500);
-    } else {
-        // Dacă nu e niciun meniu afișat
-        const newMenu = document.getElementById(dayId);
-        if (newMenu) {
-            newMenu.style.display = 'block';
-            newMenu.classList.add('swipe-in-right');
-
-            pret.style.display = 'block';
-            pret.classList.add('swipe-in-right');
-
-            setTimeout(() => {
-                newMenu.classList.remove('swipe-in-right');
-                pret.classList.remove('swipe-in-right');
-            }, 500);
-        }
+    // Noua zi apare din dreapta
+    const selectedMenu = document.getElementById(dayId);
+    if (selectedMenu && selectedMenu.classList.contains("hidden")) {
+        setTimeout(() => {
+            selectedMenu.classList.remove("hidden");
+            selectedMenu.classList.add("slide-in");
+            pret.classList.remove("hidden");
+            pret.classList.add("fade-in-up");
+        }, 400);
     }
 }
-
-
-document.querySelectorAll('.button').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        this.classList.add('btn-clicked');
-        setTimeout(() => {
-            this.classList.remove('btn-clicked');
-        }, 300); // dupa 300ms revine la normal
-    });
-});
