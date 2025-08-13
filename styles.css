@@ -1,28 +1,24 @@
-body {
+html, body {
+    height: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('wallpapersden.com_topography-abstract-black-texture_2880x1800.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: url('4712f146-24df-4257-8e86-5fc0aaa246fc.png') center/cover fixed;
     color: white;
 }
 
-/* Bara de sus cu efect premium */
+/* Bara de sus */
 .top-bar {
-    background: linear-gradient(to right, rgba(255,255,255,0.05), rgba(255,255,255,0.15));
+    background: rgba(255, 255, 255, 0.05);
     padding: 12px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
     backdrop-filter: blur(12px);
     box-shadow: 0 2px 15px rgba(0,0,0,0.5);
 }
 
-/* Butoane premium */
+/* Butoane */
 .button, .day-button {
     padding: 12px 24px;
     font-size: 1.05em;
@@ -34,8 +30,6 @@ body {
     cursor: pointer;
     margin: 6px;
     transition: all 0.35s ease;
-    position: relative;
-    overflow: hidden;
 }
 
 .button:hover, .day-button:hover {
@@ -45,75 +39,23 @@ body {
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Efect click buton */
-.button:active, .day-button:active {
-    transform: scale(0.92);
-}
-
-/* Efect val la click */
-.button::after, .day-button::after {
-    content: "";
-    position: absolute;
-    width: 300%;
-    height: 300%;
-    top: 50%;
-    left: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%) scale(0);
-    border-radius: 50%;
-    transition: transform 0.5s ease;
-}
-.button:active::after, .day-button:active::after {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-/* Container central */
+/* Container */
 .container {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-/* Fade-in premium */
-.fade-in-page {
-    animation: fadeInPage 1.2s ease forwards;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-@keyframes fadeInPage {
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Swipe pentru meniuri */
-.swipe-out-left {
-    animation: swipeOutLeft 0.5s ease forwards;
-}
-.swipe-in-right {
-    animation: swipeInRight 0.5s ease forwards;
-}
-
-@keyframes swipeOutLeft {
-    from { opacity: 1; transform: translateX(0); }
-    to { opacity: 0; transform: translateX(-50px); }
-}
-
-@keyframes swipeInRight {
-    from { opacity: 0; transform: translateX(50px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-/* Card meniuri/contact premium */
+/* Card */
 .menu, .contact {
     background: rgba(0, 0, 0, 0.65);
     padding: 25px;
     border-radius: 25px;
     box-shadow: 0 8px 40px rgba(0,0,0,0.5);
     max-width: 550px;
-    width: 100%;
     text-align: center;
-    color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .menu:hover, .contact:hover {
@@ -125,8 +67,6 @@ body {
 .titlumare {
     font-size: 2.3em;
     font-weight: bold;
-    text-decoration: underline;
-    text-underline-offset: 8px;
 }
 
 /* Feluri */
@@ -137,36 +77,138 @@ body {
 
 /* Preț */
 .pret {
-    font-family: 'Trebuchet MS', sans-serif;
     font-size: 2em;
     margin-top: 20px;
     color: #ffcc00;
 }
 
-/* Footer */
+/* Footer fix jos */
 .semnatura {
     text-align: center;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background: rgba(0,0,0,0.8);
+    padding: 8px;
+    background: rgba(0,0,0,0.7);
     font-weight: bold;
-    padding: 8px 0;
     letter-spacing: 1px;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+    margin-top: auto;
 }
 
-/* Liste meniuri */
-.menu ul {
-    display: inline-block;
-    text-align: left;
+/* Ascundere */
+.hidden {
+    display: none;
+}
+
+/* Animații */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+.fade-in-up {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+ 
+/* Centrare perfectă a meniului */
+.day-menu ul {
+    list-style: none;
+    padding: 0;
     margin: 0 auto;
-    padding-left: 0;
+    text-align: center;
+}
+.day-menu li {
+    margin: 5px 0;
 }
 
-/* Efect buton selectat */
-.btn-clicked {
-    box-shadow: 0 0 15px #ffcc00;
-    transform: scale(1.05);
+/* Butoane cu galben premium */
+.day-button {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid gold;
+    color: gold;
+    transition: all 0.4s ease;
+}
+.day-button:hover {
+    background: gold;
+    color: black;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 20px gold;
+}
+
+/* Animații noi */
+.slide-in {
+    animation: slideInRight 0.6s ease forwards;
+}
+.slide-out-left {
+    animation: slideOutLeft 0.6s ease forwards;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(80px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideOutLeft {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(-80px); }
+}
+
+/* Animatie preț */
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Stil premium comun pentru butoane sus + zile */
+.button, .day-button {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid gold;
+    color: gold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.4s ease;
+}
+
+.button:hover, .day-button:hover {
+    background: gold;
+    color: black;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 20px gold;
+}
+
+
+/* Stil premium rotunjit pentru butoane sus + zile */
+.button, .day-button {
+    background: rgba(0, 0, 0, 0.55);
+    border: 2px solid gold;
+    color: gold;
+    padding: 8px 18px;
+    border-radius: 50px; /* mai rotund */
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.35s ease;
+}
+
+.button:hover, .day-button:hover {
+    background: gold;
+    color: black;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.8);
 }
